@@ -3,11 +3,19 @@ module.exports = {
     title: "portfolio",
   },
   plugins: [
-    "gatsby-plugin-styled-components",
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      // If you want to use styled components you should change the injection order.
+      options: {
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
+      },
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "UA-70116997-1",
+        trackingId: "UA-70116997-1", 
       },
     },
     "gatsby-plugin-sharp",
@@ -39,4 +47,7 @@ module.exports = {
       __key: "pages",
     },
   ],
+  siteMetadata: {
+    title: 'Fareez Ahmed: Web Developer, Artist',
+  },
 };
